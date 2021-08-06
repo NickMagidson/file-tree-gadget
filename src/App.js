@@ -2,15 +2,18 @@ import React from "react";
 
 function App() {
   return <div> 
-    <h3>Hello World!</h3>
-    <h4>Goodbye</h4>
-    <Folder/>
+    <Folder name="Desktop"/>
+    <Folder name="Applications"/>
     </div> 
 }
 
-const Folder = () => {
-  return <h4>Folder</h4>
+const Folder = (props) => {
+  return <h4>{props.name}</h4>
 };
+
+const File = (props) => {
+  
+}
 
 
 export default App;
