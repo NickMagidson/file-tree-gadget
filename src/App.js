@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
   return <div> 
-    <Folder name="Desktop" isOpen={false}>
+    <Folder name="Desktop">
       <Folder name="Music">
         <File name="all_star.mp3"/>
         <File name="express_file.mp3"/>  
@@ -17,10 +17,13 @@ function App() {
 }
 
 const Folder = (props) => {
+  const [ isOpen, setIsOpen ] = useState(true);
+
+  const { name, children } = props;
   return <div>
     {props.name}
     <div style={{ marginLeft: '17px' }}>
-    {props.isOpen ? props.children: null}
+      {isOpen ? children: null}
     </div>
   </div>
 };
